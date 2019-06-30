@@ -6,12 +6,19 @@ A <b>machine learning</b> based tool to predict the <b>expected sale values</b> 
 ## To Do
 - [ ] Collect initial data
 - [ ] Create Update algorithm
-- [ ] Collect trend data
-- [ ] Collect eth price data
+- [x] Collect trend data
+- [x] Collect eth price data
 - [ ] Get predict data working
-- [ ] Make a combine script (for train_dense, trend and eth price) - probably going to be a bit nasty
-- [ ] 
-- [ ] 
+- [x] Make a combine script (for train_dense, trend and eth price) - probably going to be a bit nasty
+- [ ] Make everything into classes
+- [ ] Make website to display everything?
+- [ ] add logging
+- [ ] figure out how to optimise model performance
+- [ ] create main file to run everything
+- [ ] create requirements.txt
+- [ ] test on raspberry pi
+- [ ] host website on raspberry pi!!!
+
 
 ## Overview
 - Subactions will be called by a `main.py` script. This will also organise which results to send via email.
