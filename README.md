@@ -4,7 +4,7 @@ A <b>machine learning</b> based tool to predict the <b>expected sale values</b> 
 ---
 
 ## To Do
-- [ ] Collect initial data
+- [x] Collect initial data
 - [ ] Create Update algorithm
 - [x] Collect trend data
 - [x] Collect eth price data
