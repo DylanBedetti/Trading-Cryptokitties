@@ -1,1 +1,0 @@
-https://public.api.cryptokitties.co/v1/kitties/500000
