@@ -9,6 +9,9 @@ import asyncio
 import nest_asyncio
 nest_asyncio.apply()
 import aiohttp
+import datetime
+
+# figure out faster way of loading data
 
 
 class Update_kitties_for_sale:
@@ -28,6 +31,9 @@ class Update_kitties_for_sale:
     def Update_kitties(self):
         # changing directory to crawley
         os.chdir(self.home_dir + '\\Crawler')
+        
+        date_format = datetime.datetime.now().isoformat().replace(':', "-")[:-7]
+        print(date_format)
         
         # deleting files in the html folder
         files = [os.path.join(os.getcwd(), "html\\", os.listdir('html')[i]) for i in range(len(os.listdir("html")))]
@@ -51,7 +57,7 @@ class Update_kitties_for_sale:
         }
         
         ##########################################################################
-        # async function
+        async function
         async def download_html(session, url):
             async with session.request('GET', url, headers = headers, data = payload, allow_redirects=False) as res:
                 filename = f'html/output_{len(os.listdir("html/"))}.html'
@@ -181,7 +187,7 @@ class Update_kitties_for_sale:
 
 
         # resorting columns!
-        data = data[['time', 'ID', "USD"] + list(data.columns)[:-2][1:]]
+        data = data[['time', 'ID', "USD"] + list(data.columns)[3:]]
         
         ##########################################################################
         # Populating DF with data from html's
@@ -240,11 +246,12 @@ class Update_kitties_for_sale:
                     print(f"we at: {k} out of {data.shape[0]}. Giving us percent complete of {round(100*k/int(data.shape[0]), 5)}%   ", end = "\r")
 
                     if k % 100 == 0:
-                        data.to_csv("Latest_kitties.csv", index = False)
+                        data.to_csv("Latest_kitties_{}.csv".format(date_format), index = False)
 
                     k = k + 1
                 except:
                     print("\n" + str(d))
-        data.to_csv("Latest_kitties.csv", index = False)
+        data.to_csv("Latest_kitties_{}.csv".format(date_format), index = False)
+        print("ALL DONE updated kitties")
         
         os.chdir(self.home_dir)

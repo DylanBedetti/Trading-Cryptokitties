@@ -5,12 +5,15 @@ A <b>machine learning</b> based tool to predict the <b>expected sale values</b> 
 
 ## To Do
 - [x] Collect initial data
-- [ ] Connect to current kitties on sale!
-- [ ] Create Update algorithm
+- [x] Connect to current kitties on sale!
+- [x] Create Update algorithm
 - [x] Collect trend data
 - [x] Collect eth price data
-- [ ] Get predict data working
+- [x] Get predict data working
 - [x] Make a combine script (for train_dense, trend and eth price) - probably going to be a bit nasty
+- [ ] Create model class which check if model saved avaliable or trains new model
+- [ ] Connect email - send top 50 buys with important stats
+- [ ] Log best 50 buy for each day
 - [ ] Make everything into classes
 - [ ] Make website to display everything?
 - [ ] add logging
@@ -43,6 +46,7 @@ A <b>machine learning</b> based tool to predict the <b>expected sale values</b> 
 ## How to use (Python 3.6.8)
 
 > create a virtual env ect....
+pip install -r requirements.txt
 
 
 
