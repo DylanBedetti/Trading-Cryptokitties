@@ -11,6 +11,7 @@ A <b>machine learning</b> based tool to predict the <b>expected sale values</b> 
 - [x] Collect eth price data
 - [x] Get predict data working
 - [x] Make a combine script (for train_dense, trend and eth price) - probably going to be a bit nasty
+- [ ] Add columns that measures scarcity of cat?
 - [ ] Make tool to see past cryptokittie sales that are similar
 - [ ] Create model class which check if model saved avaliable or trains new model
 - [ ] Connect email - send top 50 buys with important stats
@@ -24,6 +25,7 @@ A <b>machine learning</b> based tool to predict the <b>expected sale values</b> 
 - [ ] test on raspberry pi
 - [ ] host website on raspberry pi!!!
 
+How do you know if its actually a good prediction? or just a one off really shit one?
 
 ## Overview
 - Subactions will be called by a `main.py` script. This will also organise which results to send via email.
