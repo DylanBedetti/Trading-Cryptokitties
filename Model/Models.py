@@ -186,14 +186,21 @@ class Model_functions:
         ETH = ETH[["date", "close"]]
         
         # updating columns
-        data['trends'] = trends['cryptokitties']
-        data['close'] = ETH['close']
+        data['trends'] = trends['cryptokitties'][0]
+        data['close'] = ETH['close'][0]
         
         # updating price to USD
         data['USD'] = data['USD'] * ETH['close'][0]
         
         # filling nulls with '0'
         data = data.fillna('0')
+        
+#         print("\n\n-------Table Overview-------\n\n")
+#         print(data.head(5))
+#         print(data.tail(5))
+        
+        
+        print("adding Scarcity values")
         
         
         # Scarcity

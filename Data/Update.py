@@ -38,7 +38,7 @@ class Update_train_dataset:
         os.chdir(self.home_dir + '\\Data')
         
         # define date to pull from 
-        my_cryptory = Cryptory(from_date = "2017-05-01")
+        my_cryptory = Cryptory(from_date = "2018-05-01")
 
         # get historical ethereum prices from coinmarketcap
         df = my_cryptory.extract_coinmarketcap("ethereum")
@@ -56,7 +56,7 @@ class Update_train_dataset:
         os.chdir(self.home_dir + '\\Data')
         
         # define date
-        my_cryptory = Cryptory(from_date = "2017-05-01")
+        my_cryptory = Cryptory(from_date = "2018-05-01")
         
         # pull data from google trends
         df = my_cryptory.get_google_trends(kw_list=["cryptokitties"])

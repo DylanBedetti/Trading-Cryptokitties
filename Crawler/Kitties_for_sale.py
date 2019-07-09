@@ -47,7 +47,7 @@ class Update_kitties_for_sale:
         # html files will include a 100 kitties each, this will minimise the required files I need to pull
         all_urls = []
         for i in range(int(53662/100)+ 2):
-            all_urls.append(f'https://public.api.cryptokitties.co/v1/kitties?include=sale&price=80000000000000000-1000000000000000000&orderBy=current_price&limit={100}&offset={i*100}&orderDirection=asc')
+            all_urls.append(f'https://public.api.cryptokitties.co/v1/kitties?include=sale&price=8000000000000000-100000000000000000&orderBy=current_price&limit={100}&offset={i*100}&orderDirection=asc')
             
         # define the payload and token
         payload = {}
@@ -57,7 +57,7 @@ class Update_kitties_for_sale:
         }
         
         ##########################################################################
-        async function
+        #async function
         async def download_html(session, url):
             async with session.request('GET', url, headers = headers, data = payload, allow_redirects=False) as res:
                 filename = f'html/output_{len(os.listdir("html/"))}.html'
@@ -109,7 +109,7 @@ class Update_kitties_for_sale:
             limit = 100
             offset = (int(e[7:].split(".")[0])-1)*100
 
-            url = f'https://public.api.cryptokitties.co/v1/kitties?include=sale&price=80000000000000000-1000000000000000000&orderBy=current_price&limit={100}&offset={offset}&orderDirection=asc'
+            url = f'https://public.api.cryptokitties.co/v1/kitties?include=sale&price=8000000000000000-10000000000000000&orderBy=current_price&limit={100}&offset={offset}&orderDirection=asc'
             response = requests.request('GET', url, headers = headers, data = payload, allow_redirects=False).text
 
             file = open("html/" + e, 'w', encoding="utf-8")
