@@ -26,6 +26,7 @@ A <b>machine learning</b> based tool to predict the <b>expected sale values</b> 
 - [ ] host website on raspberry pi!!!
 
 How do you know if its actually a good prediction? or just a one off really shit one?
+Mewtation gems??
 
 ## Overview
 - Subactions will be called by a `main.py` script. This will also organise which results to send via email.
