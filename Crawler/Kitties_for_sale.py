@@ -42,19 +42,28 @@ class Update_kitties_for_sale:
             os.remove(files[i]) 
         
         
-        
-        # collecting urls to use for html pull
-        # html files will include a 100 kitties each, this will minimise the required files I need to pull
-        all_urls = []
-        for i in range(int(53662/100)+ 2):
-            all_urls.append(f'https://public.api.cryptokitties.co/v1/kitties?include=sale&price=8000000000000000-100000000000000000&orderBy=current_price&limit={100}&offset={i*100}&orderDirection=asc')
-            
-        # define the payload and token
+                # define the payload and token
         payload = {}
         headers = {
           'x-api-token': 'w-5V-v6V__trBl7yxGMXnwhLiGkq-03XnCVNaKePPd4',
           'Content-Type': 'application/json',
         }
+        
+        url = "https://public.api.cryptokitties.co/v1/kitties?include=sale&price=8000000000000000-100000000000000000&orderBy=current_price&limit=1&offset=0&orderDirection=asc"
+        
+        response = requests.request('GET', url, headers = headers, data = payload, allow_redirects=False)
+        parsed = json.loads(response.text)
+#         print(parsed)
+        number_of_files = parsed['total']
+        
+        
+        # collecting urls to use for html pull
+        # html files will include a 100 kitties each, this will minimise the required files I need to pull
+        all_urls = []
+        for i in range(int(number_of_files/100)+ 2):
+            all_urls.append(f'https://public.api.cryptokitties.co/v1/kitties?include=sale&price=8000000000000000-100000000000000000&orderBy=current_price&limit={100}&offset={i*100}&orderDirection=asc')
+            
+        
         
         ##########################################################################
         #async function
